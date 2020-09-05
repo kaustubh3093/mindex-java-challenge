@@ -40,6 +40,10 @@ public class CompensationController {
 			if(compensation.getEmployee().getEmployeeId().equals(id))
 				result.add(compensation);
 		}
+		
+		if(result.size() == 0) {
+			throw new RuntimeException("No compensation for employee id " + id);
+		}
 		return result;
 	}
 	
