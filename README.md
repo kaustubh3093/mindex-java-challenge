@@ -77,10 +77,42 @@ This new type should have a new REST endpoint created for it. This new endpoint 
 the fully filled out ReportingStructure for the specified employeeId. The values should be computed on the fly and will 
 not be persisted.
 
+#### How to Execute ######
+* READ
+    * HTTP Method: GET 
+    * URL: localhost:8080/reportingStructure/{id}
+    * RESPONSE: ReportingStructure
+
 ### Task 2
 Create a new type, Compensation. A Compensation has the following fields: employee, salary, and effectiveDate. Create 
 two new Compensation REST endpoints. One to create and one to read by employeeId. These should persist and query the 
 Compensation from the persistence layer.
+
+#### How to Execute ######
+* CREATE
+    * HTTP Method: POST 
+    * URL: localhost:8080/compensation
+    * RESPONSE: Compensation
+
+JSON Body:
+{
+    "employee": {
+        "employeeId": "f96f4a07-0c6c-4b3b-b31c-11bb86aee984",
+        "firstName": "Michell",
+        "lastName": "Lewandowski",
+        "position": "Technical Manager",
+        "department": "Engineering"
+    },
+    "salary" : 85000.00,
+    "effectiveDate" : "2020-05-21T12:12:45.45"
+}
+
+* READ
+    * HTTP Method: GET 
+    * URL: localhost:8080/compensation/{id}
+    * RESPONSE: List<Compensation>
+
+Here, Id is the employee id.
 
 ## Delivery
 Please upload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
